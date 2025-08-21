@@ -10,3 +10,22 @@ h1{
     padding: 20px;
     text-align: center;
 }
+
+a {
+    color: blue;
+}
+
+.container {
+    width: 600px;
+    margin: 20px auto;
+    border: 1px solid #960000;
+    border-radius: 5px;
+}
+
+a:hover{
+    color : purple;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: rgba(150, 0, 0, 0.1);
+}
+
