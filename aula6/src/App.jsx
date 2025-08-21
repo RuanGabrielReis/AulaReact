@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 import Home from './Paginas/Home';
 import Exemplo1 from './Paginas/Exemplo1';
 import Exemplo2 from './Paginas/Exemplo2';
@@ -7,11 +7,13 @@ import Exercicio2 from './Paginas/Exercicio2';
 import Exercicio3 from './Paginas/Exercicio3';
 import Exercicio4 from './Paginas/Exercicio4';
 import Exercicio5 from './Paginas/Exercicio5';
+import "./Paginas/estilos.css"
 import './App.css';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/exemplo1" element={<Exemplo1 />} />
@@ -22,7 +24,8 @@ function App() {
         <Route path="/exercicio4" element={<Exercicio4 />} />
         <Route path="/exercicio5" element={<Exercicio5 />} />
       </Routes>
-    </Router>
+      
+    </BrowserRouter>
   );
 }
 
