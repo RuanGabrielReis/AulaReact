@@ -20,6 +20,7 @@ a {
     margin: 20px auto;
     border: 1px solid #960000;
     border-radius: 5px;
+    padding: 10px;
 }
 
 a:hover{
@@ -29,3 +30,26 @@ a:hover{
     background-color: rgba(150, 0, 0, 0.1);
 }
 
+input[type=text], input[type=number], select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    box-sizing:border-box;
+    border: 1px solid #960000;
+}
+
+input[type=button] {
+    background-color: #960000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    width:100px;
+
+}
+
+input[type=button]:hover {
+    background-color: #530000;
+}
