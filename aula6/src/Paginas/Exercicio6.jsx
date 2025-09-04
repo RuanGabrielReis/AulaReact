@@ -1,18 +1,23 @@
 import {Link} from "react-router-dom";
 import {useState} from "react";
 
-export default function Exercicio4()
+export default function Exercicio6()
 {
-  const [base, setBase] = useState(0);
-  const [altura, setAltura] = useState(0);
+  const [preco, setPreco] = useState(0);
+  const [qtt, setQtt] = useState(0);
   const [resultado, setResultado] = useState('');
 
 
   function calcular() {
-    let area = Number(base) * Number(altura) / 2;
+    let subtotal = Number(qtt) * Number(preco);
+    let desconto = subtotal *10/100;
+    let total = subtotal - desconto;
     setResultado(
       <div>
-        A área do triângulo é {area} <br />
+        O subtotal é {subtotal} <br />
+        O desconto é {desconto} <br />
+        O total é {total} <br />
+        
       </div>
     );
   }
@@ -26,13 +31,14 @@ export default function Exercicio4()
       <div className="container">
         <form onSubmit={e => e.preventDefault()}>
           <p>
-            Digite o valor da base: <br />
-            <input type="number" value={base} onChange={e => setBase(e.target.value)} />
+            Digite a quantidade: <br />
+            <input type="number" value={qtt} onChange={e => setQtt(e.target.value)} />
           </p>
           <p>
-            Digite a taxa de altura: <br />
-            <input type="number" value={altura} onChange={e => setAltura(e.target.value)} />
+            Digite o preço: <br />
+            <input type="number" value={preco} onChange={e => setPreco(e.target.value)} />
           </p>
+          
           <p>
             <input type="button" value="Calcular" onClick={calcular} />
           </p>

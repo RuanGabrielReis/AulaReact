@@ -1,18 +1,18 @@
 import {Link} from "react-router-dom";
 import {useState} from "react";
 
-export default function Exercicio4()
+export default function Exercicio10()
 {
-  const [base, setBase] = useState(0);
-  const [altura, setAltura] = useState(0);
+  const [valorHora, setValorHora] = useState(0);
+  const [qttHoras, setQttHoras] = useState(0);
   const [resultado, setResultado] = useState('');
 
 
   function calcular() {
-    let area = Number(base) * Number(altura) / 2;
+    let salario = Number(valorHora) * Number(qttHoras) * 30;
     setResultado(
       <div>
-        A área do triângulo é {area} <br />
+        O salário do funcioário é {salario} <br />
       </div>
     );
   }
@@ -21,17 +21,17 @@ export default function Exercicio4()
 
   return (
     <div>
-      <h1>Exercicio 4</h1>
+      <h1>Exercicio 10</h1>
 
       <div className="container">
         <form onSubmit={e => e.preventDefault()}>
           <p>
-            Digite o valor da base: <br />
-            <input type="number" value={base} onChange={e => setBase(e.target.value)} />
+            Digite o valor da hora: <br />
+            <input type="number" value={valorHora} onChange={e => setValorHora(e.target.value)} />
           </p>
           <p>
-            Digite a taxa de altura: <br />
-            <input type="number" value={altura} onChange={e => setAltura(e.target.value)} />
+            Digite a quantidade de horas trabalhadas por dia: <br />
+            <input type="number" value={qttHoras} onChange={e => setQttHoras(e.target.value)} />
           </p>
           <p>
             <input type="button" value="Calcular" onClick={calcular} />
