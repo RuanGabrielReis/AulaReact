@@ -69,14 +69,14 @@ app.get("/alunos/:codigo", (req,res) => {
 
 app.post("/alunos", (req, res) => {
     const{nome, cidade, estado} = req.body;
-    const sql = "insert into alunos(nome, cidade, estado) values (?,?,?)"
+    const sql = "insert into aluno(nome, cidade, estado) values (?,?,?)"
 
     banco.query(sql, [nome, cidade, estado], (erro, result) =>{
         if (erro){
             console.log(erro);
             return res.status(500).json({error: "Erro ao cadastrar aluno"});
         } else {
-            let mensagem = `Aluno ${nome} cadastrado com sucesso com o codigo ${res}`;
+            let mensagem = `Aluno ${nome} cadastrado com sucesso com o codigo ${result.insertId}`;
             console.log(mensagem);
             return res.status(201).json({message: mensagem});
         }
@@ -88,7 +88,7 @@ app.put("/alunos/:id", (req, res) => {
     const {id} = req.params;
     const {nome, cidade, estado} = req.body;
 
-    const sql = "UPDATE alunos SET nome = ?, cidade = ?, estado = ? WHERE codigo = ?";
+    const sql = "UPDATE aluno SET nome = ?, cidade = ?, estado = ? WHERE codigo = ?";
 
     banco.query(sql, [nome, cidade, estado, id], (erro, result) => {
         if (erro){
@@ -110,7 +110,7 @@ app.delete("/alunos/:id", (req, res) => {
 
     const { id } = req.params;
 
-    const sql = "DELETE FROM alunos WHERE codigo = ?"
+    const sql = "DELETE FROM aluno WHERE codigo = ?"
 
     banco.query(sql, [id], (erro, result) => {
         if (erro) {
