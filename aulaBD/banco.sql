@@ -1,13 +1,15 @@
 create database aulabd;
 use aulabd;
 
-create table alunos(
+create table aluno(
+
 codigo int key auto_increment,
 nome varchar(50),
 cidade varchar(50),
 estado varchar(2)
+
 );
 
-insert into alunos (nome,cidade,estado) values ("Guilherme", "Mococa","SP");
+insert into aluno (nome, cidade, estado) values ("Victor", "Mococa", "SP");
 
-select * from alunos;
+select * from aluno;
